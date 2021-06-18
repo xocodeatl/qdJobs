@@ -13,7 +13,7 @@ import (
 
 func K8sJobs(name string, image string, cmd string) {
   	clientset, _ := K8sConfig()
-	jobs := clientset.BatchV1().Jobs("default")
+	jobs := clientset.BatchV1().Jobs("")
 	var jobbackoff int32 = 0
 
 	jobSpec := &batchv1.Job{

@@ -1,7 +1,6 @@
 package main
 
 import (
-  "fmt"
   "github.com/urfave/cli"
   "os"
   "log"
@@ -22,9 +21,17 @@ func main() {
         jobName  := c.Args().Get(0)
         jobImage := c.Args().Get(1)
         jobCmd := c.Args().Get(2)
-        fmt.Println("Hello one")
-        fmt.Println(jobName, jobImage, jobCmd)
         k8s.K8sJobs(jobName, jobImage, jobCmd)
+      },
+    },
+    {
+      Name: "get",
+      Aliases: []string{"g"},
+      Usage: "qdJobs get 'JobName' ",
+      Action: func(c *cli.Context) {
+        jobName  := c.Args().Get(0)
+      
+        k8s.K8sGetJobs(jobName)
       },
     },
   }
