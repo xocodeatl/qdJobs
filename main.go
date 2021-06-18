@@ -4,7 +4,9 @@ import (
   "github.com/urfave/cli"
   "os"
   "log"
-  "github.com/xocodeatl/qdjobs/k8s"
+  k8s "github.com/xocodeatl/qdjobs/k8s"
+  get "github.com/xocodeatl/qdjobs/k8s/get"
+
 )
 
 func main() {
@@ -31,7 +33,7 @@ func main() {
       Action: func(c *cli.Context) {
         jobName  := c.Args().Get(0)
       
-        k8s.K8sGetJobs(jobName)
+        k8s.GetJobs(jobName)
       },
     },
   }

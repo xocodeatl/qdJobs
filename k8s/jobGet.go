@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-func K8sGetJobs(name string, image string, cmd string) {
+func GetJobs(name string) {
   	clientset, _ := K8sConfig()
 	jobs := clientset.BatchV1().Jobs("")
 
