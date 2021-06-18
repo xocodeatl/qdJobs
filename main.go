@@ -15,9 +15,9 @@ func main() {
   app.Author = "Ramon Esparza Rodriguez"
   app.Commands = []cli.Command{
     {
-      Name: "job1",
-      Aliases: []string{"g"},
-      Usage: "this is a first test",
+      Name: "create",
+      Aliases: []string{"c"},
+      Usage: "qdJobs create 'JobName' 'Image' 'command, you can use double quotes for commands that requiere arguments': qdJobs create firstJob ubuntu ls",
       Action: func(c *cli.Context) {
         jobName  := c.Args().Get(0)
         jobImage := c.Args().Get(1)
