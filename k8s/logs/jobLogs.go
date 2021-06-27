@@ -22,10 +22,9 @@ func LogsJobs(name string) (error){
     }
     defer stream.Close()
 
-    
 	x, err := status.GetJobsStatus(name)
 	if x == 0 {
-		buffer := make([]byte, 2000)
+		buffer := make([]byte, 4000)
         numBytes, err := stream.Read(buffer)
         if err != nil {
 			log.Println(err)

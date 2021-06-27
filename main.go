@@ -4,9 +4,9 @@ import (
   "github.com/urfave/cli"
   "os"
   "log"
-  k8s "github.com/xocodeatl/qdjobs/k8s"
-  get "github.com/xocodeatl/qdjobs/k8s/get"
-
+  k8s "github.com/xocodeatl/qdjobs/k8s/create"
+  status "github.com/xocodeatl/qdjobs/k8s/status"
+  logs "github.com/xocodeatl/qdjobs/k8s/logs"
 )
 
 func main() {
@@ -27,13 +27,21 @@ func main() {
       },
     },
     {
-      Name: "get",
-      Aliases: []string{"g"},
-      Usage: "qdJobs get 'JobName' ",
+      Name: "status",
+      Aliases: []string{"s"},
+      Usage: "qdJobs status 'JobName' : qdJobs status firstJob",
       Action: func(c *cli.Context) {
         jobName  := c.Args().Get(0)
-      
-        k8s.GetJobs(jobName)
+        status.GetJobsStatus(jobName)
+      },
+    },
+    {
+      Name: "logs",
+      Aliases: []string{"l"},
+      Usage: "qdJobs  logs 'JobName' : qdJobs logs firstJob",
+      Action: func(c *cli.Context) {
+        jobName  := c.Args().Get(0)
+        logs.LogsJobs(jobName)
       },
     },
   }
