@@ -21,9 +21,8 @@ func LogsJobs(name string) (error){
         return err
     }
     defer stream.Close()
-
 	x, err := status.GetJobsStatus(name)
-	if x == 0 {
+	if x == 0 || x == 2 {
 		buffer := make([]byte, 4000)
         numBytes, err := stream.Read(buffer)
         if err != nil {
@@ -33,6 +32,7 @@ func LogsJobs(name string) (error){
         message := string(buffer[:numBytes])
         fmt.Print(message)
 	} else {
+		log.Println("job is still running...")
 		log.Println(err)
 		return err
 	}
