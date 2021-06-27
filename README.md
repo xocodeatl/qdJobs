@@ -1,14 +1,16 @@
 # qdJobs
 
 qdJobs is a cli tool to create quick and dirty jobs in kubernetes without too much hassle. 
-
+This is a debugging and troubleshotting tool, not for use in production environments.
 ## Usage
 ```
 USAGE:
    qdJobs command [command options]
 
 COMMANDS:
-   create, c  qdJobs create 'JobName' 'Image' 'command, you can use double quotes for commands that requiere arguments': qdJobs create firstJob ubuntu ls
+   create, c  qdJobs create 'JobName' 'Image' 'command' : qdJobs create firstJob ubuntu "ls- ltr"
+   status, s  qdJobs status 'JobName' : qdJobs status firstJob
+   logs, l    qdJobs  logs 'JobName' : qdJobs logs firstJob
    help, h    Shows a list of commands or help for one command
 ```
 ## Installation
