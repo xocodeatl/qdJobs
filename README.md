@@ -8,6 +8,7 @@ USAGE:
    qdJobs command [command options]
 
 COMMANDS:
+   run, r  qdJobs create 'JobName' 'Image' 'command' : qdJobs create firstJob ubuntu "ls -ltr"
    create, c  qdJobs create 'JobName' 'Image' 'command' : qdJobs create firstJob ubuntu "ls- ltr"
    status, s  qdJobs status 'JobName' : qdJobs status firstJob
    logs, l    qdJobs  logs 'JobName' : qdJobs logs firstJob
