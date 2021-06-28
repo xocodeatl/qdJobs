@@ -32,7 +32,6 @@ func LogsJobs(name string) (error){
         message := string(buffer[:numBytes])
         fmt.Print(message)
 	} else {
-		log.Println("job is still running...")
 		log.Println(err)
 		return err
 	}

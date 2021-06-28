@@ -19,7 +19,6 @@ func JobDetails(name string) string {
     var jobNamePod string
     for _, pod := range podList.Items {
         jobNamePod = pod.GetName()
-        log.Println("Pod name:", jobNamePod)
 	}
     return jobNamePod
 }

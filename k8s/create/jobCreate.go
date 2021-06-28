@@ -44,6 +44,7 @@ func K8sJobs(name string, image string, cmd string) {
 
     //print job details
     log.Println("Created K8s job successfully")
-    k8s.JobDetails(name)
+    pod_name := k8s.JobDetails(name)
+    log.Println("Pod name: ", pod_name)
 }
 

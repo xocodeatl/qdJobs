@@ -44,6 +44,17 @@ func main() {
         logs.LogsJobs(jobName)
       },
     },
+    {
+      Name: "run",
+      Aliases: []string{"r"},
+      Usage: "qdJobs  run 'JobName' 'Image' 'command' : firstJob",
+      Action: func(c *cli.Context) {
+        jobName  := c.Args().Get(0)
+        jobImage := c.Args().Get(1)
+        jobCmd := c.Args().Get(2)
+        RunJob(jobName, jobImage, jobCmd)
+      },
+    },
   }
   err := app.Run(os.Args)
   if err != nil {
