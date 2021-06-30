@@ -1,0 +1,71 @@
+# Go & K8s
+
+Golang Guadalajara Meetup
+Ramon Esparza
+30 Jun 2021
+
+## Agenda
+
+- What is K8s? 
+- Why is Go perfect for DevOps and K8s. 
+- Integration with other platforms and clouds
+- K8s tools already written in Go.
+- Design **qdJobs** with Go.
+
+## What is K8s?
+Kubernetes is an open-source platform for managing containerized apps and services. 
+
+.image images/k8s.png 
+
+Kubernetes provides you with a powerful tool to run distributed systems resiliently.
+
+.image images/gopher1.png 410 300
+
+## Why is Go perfect for DevOps. 
+
+- **Open Source**. 
+- **Write once, run anywhere**: Can compile to different OS and ARCHs.
+- **Fast Compilation**: 
+	- Is not that golang is fast, is that the rest are slow. 
+- **Single Binary**: Easier to manage. 
+
+## Why is Go perfect for K8s.
+
+- **Easy to understand**
+- **Performance**
+	- Unlike other languages that compile to byte-code, Golang is
+	compiled to machine code.
+- **Amazing tools**
+	- goimports
+	- deadcode
+	- errcheck
+
+## Integration with other platforms and clouds
+
+With Go being a popular language, is obvious that other cloud providers would develop SDK or libraries for Go. 
+
+Some examples are:
+- AWS: aws.amazon.com/es/sdk-for-go
+- GCP: cloud.google.com/go/docs
+- DO: github.com/digitalocean/godo
+
+You can make programs that integrate both, k8s and the cloud provider. 
+
+## K8s tools already written in Go.
+- helm.sh
+- istio.io
+- github.com/traefik/traefik
+- Hashicorp tools
+- docker.io
+- Grafana
+
+## Design qdJobs with Go.
+https://github.com/xocodeatl/qdJobs
+
+## Links 
+1. https://golang.org/doc/faq
+2. https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html
+3. https://meritocracy.is/blog/2021/04/06/golang-why-you-should-learn-go-in-2021/
+4. https://stackoverflow.blog/2020/11/02/go-golang-learn-fast-programming-languages/
+5. https://medium.com/containerum/why-we-use-go-to-develop-containerum-platform-for-kubernetes-3a33d5bdc5ec
+6. https://blog.gopheracademy.com/birthday-bash-2014/kubernetes-go-crazy-delicious/
